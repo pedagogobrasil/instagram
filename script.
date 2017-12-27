@@ -1,0 +1,53 @@
+Instagram: Deixar de Seguir Todos de Sua Lista
+Este pequeno código vai ajudá-lo a ganhar algum tempo para deixar de seguir Todos em sua lista, de uma só vez. 
+
+Há alguns passos que você deve seguir.
+
+Para executar o  instagram, use especialmente o Navegador Chrome da Google.
+1.	Abra o Instagram.com e faça o login na sua conta.
+2.	Vá para a sua página de perfil clicando   no ícone no canto superior direito.
+3.	Clique em seguir e você verá a lista de pessoas que você está seguindo agora.
+4.	Role para baixo algumas vezes para carregar mais perfis na lista.
+5.	Pressione SHIFT + CTRL + J (Windows)  ou  CMD + OPT + I (Mac)  em seu teclado ou clique no   ícone do menu do Chrome  no canto superior direito da janela do navegador e vá em  Ferramentas> Ferramentas do desenvolvedor, ou ainda, poderá pressionar a TECLA F12 – no seu teclado.
+6.	Selecione a segunda guia -  Console.
+7.	Clique com o botão direito em qualquer lugar na janela da console e selecione Limpar console, caso exista algo.
+8.	Copie e cole o primeiro código que ativa o JavaScript da API do Google e pressione Enter.
+    
+		var jq = document.createElement('script');
+    jq.src = "//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"; //Loads JavaScript
+    document.getElementsByTagName('head')[0].appendChild(jq);
+    jQuery.noConflict()
+		
+9.	Você verá uma mensagem no Console conforme demonstrado abaixo:
+    function (a,b){return new c.fn.init(a,b)}
+
+10.	Se você receber um erro semelhante ao abaixo, repita o passo nº 7 .
+
+	 Uncaught ReferenceError: jQuery is not defined
+   at <anonymous>:4:1
+
+
+11.	Em seguida, Copie e coloque o segundo código que ativa o script instaget unfollow todos .
+
+  window.setInterval(function(){
+  var x = 0;
+  $("button:contains('Following')").each(
+  function(){
+  if(x==1) return false; // O Numero 1 representa quantos unfollow's por ciclo, Você deixara de seguir
+  $(this).trigger("click");
+  $('._gs38e').scrollTop($('._gs38e')[0].scrollHeight);
+  x++;})
+  $('._gs38e').scrollTop($('._gs38e')[0].scrollHeight); console.log('loop');
+  }, 60000); 
+	// Tempo para aguardar depois de 1 ciclo, 60000 = 1 minuto. Aconselho que mantenha esse valor.. pois o Instagram poderá bloquear sua conta por tentativas de fraude.
+
+12.	Se você conseguir algo semelhante ao código abaixo, isso significa que você não é mais rápido ou você atingiu a quantidade máxima de menos por um período de tempo.  Espere um pouco e tente novamente.
+  POST https://www.instagram.com/web/friendships/0000000000/unfollow/ 403 ()
+
+13.	O Instagram tem limites próprios contra sistemas de bot e isso é totalmente compreensível. 
+Use este script com cautela, por sua conta e risco.  Respeite as regras do Instagram
+
+14.	Se Você gostou, e quiser dar um seguir no meu Instagram, agradeço.
+
+Julio Cesar Teixeira
+@pedagogobrasil
